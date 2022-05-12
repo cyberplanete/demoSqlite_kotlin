@@ -44,9 +44,8 @@ abstract class EmployeeDatabase : RoomDatabase() {
          * This is an example of a simple Singleton pattern that takes another Singleton as an
          * argument in Kotlin.
          *
-         * To learn more about Singleton read the wikipedia article:
-         * https://en.wikipedia.org/wiki/Singleton_pattern
          *
+         * *
          * @param context The application context Singleton, used to get access to the filesystem.
          */
         fun getInstance(context: Context): EmployeeDatabase {
