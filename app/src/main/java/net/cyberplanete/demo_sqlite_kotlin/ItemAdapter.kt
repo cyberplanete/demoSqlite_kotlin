@@ -14,8 +14,8 @@ import net.cyberplanete.demo_sqlite_kotlin.databinding.ItemsRowBinding
  **/
 class ItemAdapter(
     private val items: ArrayList<EmployeeEntity>,
-   // private val updateListener: (id: Int) -> Unit,// Pour le bouton update
-   // private val deleteListener: (id: Int) -> Unit // Pour le bouton delete
+    private val updateListener: (id: Int) -> Unit,// Pour le bouton update - Dans ce cas unit is void - ne retourne rien
+    private val deleteListener: (id: Int) -> Unit // Pour le bouton delete
 ) :
     RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
@@ -79,10 +79,10 @@ class ItemAdapter(
 // Todo 3 set onclick listem on the icon and invoke update and delete listeners
         //start
         holder.ivEdit.setOnClickListener {
-         //   updateListener(item.id)
+            updateListener.invoke(item.id)//invoke updateID de MainActivity ligne 66
         }
         holder.ivDelete.setOnClickListener {
-          //  deleteListener(item.id)
+            deleteListener.invoke(item.id)//invoke updateID de MainActivity ligne 65
         }
     }
 //end
